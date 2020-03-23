@@ -8,6 +8,9 @@ jdk: oraclejdk8
 script:
   - ./gradlew build
 
+env:
+  global:
+    CODECOV_TOKEN="9184a278-c908-4d0f-8945-68ba22058905"
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)

@@ -26,10 +26,35 @@ public class FriendshipAssertJTest{
     }
 
     @Test
+    public void test_make_null_friends() {
+            assertThatThrownBy(() -> {friendship.makeFriends(null,null);
+            }).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
     public void test_make_empty_friends() {
-        friendship.makeFriends(null,null);
-        assertThat(friendship.getFriendsList("Ola")).isNull();
+        assertThatThrownBy(() -> {friendship.makeFriends("","");
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    public void test_make_one_empty_friends() {
+        assertThatThrownBy(() -> {friendship.makeFriends("","Ela");
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    public void test_make_second_empty_friends() {
+        assertThatThrownBy(() -> {friendship.makeFriends("Ola","");
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
 
+    @Test
+    public void test_make_null1_friends() {
+        assertThatThrownBy(() -> {friendship.makeFriends(null,"Ola");
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+    @Test
+    public void test_make_null2_friends() {
+        assertThatThrownBy(() -> {friendship.makeFriends("Ola", null);
+        }).isInstanceOf(IllegalArgumentException.class);
     }
     @Test
     public void test_make_friends_both_ways() {
@@ -68,6 +93,22 @@ public class FriendshipAssertJTest{
         friendship.makeFriends("Ola", "Ala");
         assertThat(friendship.areFriends("Ola", "Ala")).isTrue();
         assertThat(friendship.areFriends("Ala", "Ola")).isTrue();
+    }
+
+    @Test
+    public void test_are_null_friends() {
+        assertThatThrownBy(() -> {friendship.areFriends("Ola", null);
+        }).isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @Test
+    public void test_are_empty_friends() {
+        assertThatThrownBy(() -> {friendship.areFriends("","");
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {friendship.areFriends("","Ela");
+        }).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(() -> {friendship.areFriends("Ola","");
+        }).isInstanceOf(IllegalArgumentException.class);
     }
 
     @Test

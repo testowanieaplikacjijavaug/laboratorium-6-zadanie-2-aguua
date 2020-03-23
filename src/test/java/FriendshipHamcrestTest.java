@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.hamcrest.Matchers.*;
 
 
@@ -27,10 +28,21 @@ public class FriendshipHamcrestTest {
     }
 
     @Test
+    public void test_make_null_friends() {
+        assertThrows(IllegalArgumentException.class, () -> friendship.makeFriends(null,null));
+    }
+    @Test
     public void test_make_empty_friends() {
-        friendship.makeFriends(null,null);
-        assertThat(friendship.getFriendsList("Ola"), is(nullValue()));
+        assertThrows(IllegalArgumentException.class, () -> friendship.makeFriends("",""));
+    }
+    @Test
+    public void test_get_list_friends_from_null() {
+        assertThrows(IllegalArgumentException.class, () -> friendship.getFriendsList(null));
+    }
 
+    @Test
+    public void tets_are_friends_null() {
+        assertThrows(IllegalArgumentException.class, () -> friendship.areFriends(null, null));
     }
     @Test
     public void test_make_friends_both_ways() {
@@ -71,6 +83,11 @@ public class FriendshipHamcrestTest {
         friendship.makeFriends("Ola", "Ala");
         assertThat(friendship.areFriends("Ola", "Ala"), is(true));
         assertThat(friendship.areFriends("Ala", "Ola"), is(true));
+    }
+    @Test
+    public void test_dont_have_friends(){
+        friendship.makeFriends("Ola", "Ala");
+        assertThat(friendship.areFriends("Ola", "Ela"), is(false));
     }
 
     @Test

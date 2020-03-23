@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="FriendshipAssertJTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2020-03-23T12:24:42" hostname="GDN-N-AGA" time="0.036">
+  <properties/>
+  <testcase name="test_empty_friendships" classname="FriendshipAssertJTest" time="0.026"/>
+  <testcase name="test_make_more_friends" classname="FriendshipAssertJTest" time="0.006"/>
+  <testcase name="test_are_not_friends" classname="FriendshipAssertJTest" time="0.0"/>
+  <testcase name="test_make_friends_both_ways" classname="FriendshipAssertJTest" time="0.002"/>
+  <testcase name="test_make_empty_friends" classname="FriendshipAssertJTest" time="0.0"/>
+  <testcase name="test_are_friends" classname="FriendshipAssertJTest" time="0.001"/>
+  <testcase name="test_get_list" classname="FriendshipAssertJTest" time="0.0"/>
+  <testcase name="test_my_friends_are_not_yours" classname="FriendshipAssertJTest" time="0.0"/>
+  <testcase name="test_are_friend_where_is_no_friendship" classname="FriendshipAssertJTest" time="0.0"/>
+  <testcase name="classInstance" classname="FriendshipAssertJTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -30,6 +30,7 @@ public class FriendshipHamcrestTest {
     public void test_make_empty_friends() {
         friendship.makeFriends(null,null);
         assertThat(friendship.getFriendsList("Ola"), is(nullValue()));
+
     }
     @Test
     public void test_make_friends_both_ways() {
@@ -43,7 +44,7 @@ public class FriendshipHamcrestTest {
         friendship.makeFriends("Ola", "Ala");
         friendship.makeFriends("Ola", "Basia");
         friendship.makeFriends("Ola", "Kasia");
-        assertThat(friendship.getFriendsList("Ola"), contains("Ala", "Basia", "Kasia"));
+        assertThat(friendship.getFriendsList("Ola"), containsInAnyOrder("Ala", "Basia", "Kasia"));
     }
 
     @Test
@@ -75,6 +76,7 @@ public class FriendshipHamcrestTest {
     @Test
     public void test_are_friend_where_is_no_friendship(){
         assertThat(friendship.areFriends("Ola", "Ala"), is(false));
+        assertThat( friendship.areFriends("Ala", "Ola"), is(false));
     }
 
 
@@ -83,12 +85,7 @@ public class FriendshipHamcrestTest {
         friendship.makeFriends("Ola", "Ela");
         friendship.makeFriends("Ola", "Ala");
         assertThat(friendship.areFriends("Ela", "Ala"), is(false));
-    }
-
-
-    @Test
-    public void test_big_friendship(){
-
+        assertThat(friendship.areFriends("Ala", "Ela"), is(false));
     }
 
 

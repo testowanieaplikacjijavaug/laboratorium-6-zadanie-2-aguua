@@ -29,7 +29,9 @@ jobs:
           uses: codecov/codecov-action@v1
           with:
           - name: Upload coverage to Codecov
-              uses: codecov/codecov-action@v1
+              uses: ./
               with:
-                token: "9184a278-c908-4d0f-8945-68ba22058905"
+                #token: "9184a278-c908-4d0f-8945-68ba22058905"
+                flags: unittest
+                name: codecov-1
 

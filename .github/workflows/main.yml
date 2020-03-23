@@ -24,12 +24,4 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build jacocoTestReport
-      - name: Codecov
-      - name: Upload coverage to Codecov
-          uses: ./
-          with:
-            #token: "9184a278-c908-4d0f-8945-68ba22058905"
-            flags: unittest
-            name: codecov-1
-
 

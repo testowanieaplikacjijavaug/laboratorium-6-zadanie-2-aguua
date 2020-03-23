@@ -24,9 +24,3 @@ jobs:
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
-
-    - name: Codecov
-      uses: codecov/codecov-action@v1.0.6
-      with:
-        token: "9184a278-c908-4d0f-8945-68ba22058905"
-
